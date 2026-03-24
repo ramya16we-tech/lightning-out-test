@@ -2,36 +2,25 @@
 <html>
 
 <body onload="init()">
-
-<p>It works</p>
-<h1>LWC Testing</h1>
-<div id="form-container"></div>
-
-<!-- Lightning Out script -->
-<script src="https://hull--uohdev.sandbox.my.site.com/LWCEnquiryForm/lightningt.js
+<p> It works</p>
+<h1> LWC Testing</h1>
+<div id="lightning-container"></div>
+<script src="https://hull--uohdev.sandbox.my.site.com/BetterUI/lightning/lightning.out.js"></script>
 
 <script>
-function init() {
-    console.log("Starting Lightning Out...");
-
-    $Lightning.use(
-        "c:UOH_EnquiryFormApp",
-        function() {
-            console.log("Lightning.use() callback fired — Aura App loaded.");
-
+    $Lightning.use("c:UOH_EnquiryFormApp",    // Name of the Aura App from Step 2
+        function() {                       // Callback when framework is ready
             $Lightning.createComponent(
-                "c:UOH_EnquiryFormWrapper",
-                {},
-                "form-container",
+                "c:UOH_EnquiryFormWrapper",           // The LWC you want to show
+                { 
+                   /* attributes like recordId go here */ 
+                },
+                "lightning-container",    // ID of the div above
                 function(cmp) {
-                    console.log("LWC loaded!", cmp);
+                    console.log("LWC created successfully!");
                 }
             );
         },
-        "https://hull--uohdev.sandbox.my.site.com/LWCEnquiryForm"
+        'https://hull--uohdev.sandbox.my.site.com/BetterUI/s'    // Your Public Site URL
     );
-}
 </script>
-
-</body>
-</html>
