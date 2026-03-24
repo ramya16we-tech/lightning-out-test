@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<p>Lightning Out Test</p>
+
+
+<body>
+
+<div id="lightning-container"></div>
+
+<script src="https://hull--uohdev.sandbox.my.site.com/BetterUI/lightning/lightning.out.js"></script>
+
+<script>
+$Lightning.use(
+    "c:UOH_EnquiryFormApp",
+    function() {
+        console.log("Lightning Out App Loaded");
+
+        $Lightning.createComponent(
+            "c:UOH_EnquiryFormWrapper",
+            {},
+            "lightning-container",
+            function() {
+                console.log("LWC rendered successfully!");
+            }
+        );
+    },
+    "https://hull--uohdev.sandbox.my.site.com/BetterUI/s"
+);
+</script>
+
+</body>
+</html>
