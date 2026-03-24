@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<body onload="init()">
+<p> It works</p>
+<h1> LWC Testing</h1>
+<div id="form-container"></div>
+
+<script src="https://hull--uohdev.sandbox.my.site.com/LWCEnquiryForm/lightning/lightning.out.js">
+</script>
+<script type='text/javascript'>
+function init(){
+$Lightning.use(
+
+console.log("Lightning.use() callback fired — Aura App loaded.");
+      
+
+    "c:UOH_EnquiryFormApp",  // Aura App
+    function() {
+        $Lightning.createComponent(
+            "c:UOH_EnquiryFormWrapper",  // Aura wrapper component
+            {},
+            "form-container",
+            function(cmp) {
+                console.log("LWC loaded!");
+            }
+        );
+    },
+    'https://hull--uohdev.sandbox.my.site.com/LWCEnquiryForm' // Experience Cloud endpoint
+);
+}
+</script>
+</body>
+
+</html>
